@@ -1,0 +1,98 @@
+#taskList h1{
+    margin:15px;
+    text-align: center;
+}
+#taskList table{
+    margin: auto;
+    width: 50%;
+    border-collapse: collapse;
+}
+body{
+    text-align: center;
+}
+#filterSelect{
+    margin:15px;
+}
+#completed{
+    background-color: lightsteelblue;
+}
+#toDo{
+    background-color: lavenderblush;
+    margin-top: 30px;
+}
+#completed tr:hover{
+    background-color: lavenderblush;
+}
+#toDo tr:hover{
+    background-color: lightsteelblue;
+}
+#updateButton{
+    margin:25px;
+}
+#taskList .button{
+    padding: 10px 20px;
+    font-size: 13px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    transition: 0.3s;
+    cursor: grab;
+}
+#taskList .button:hover{
+    background-color: black;
+    color: white;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.5);
+}
+#taskList .button:active{
+    transform: translateY(4px);
+    cursor: grabbing;
+}
+#taskList tr{
+    transition: 0.3s;
+}
+.checkbox{
+    cursor: pointer;
+}
+.dropButton{
+    padding: 10px 20px;
+    font-size: 13px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    transition: 0.3s;
+    cursor: grab;
+}
+.dropContent{
+    display: none;
+    min-width: 105px;
+    position:absolute;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.71);
+
+}
+#dropDown{
+    width:100px;
+    margin:auto;
+    display: inline-block;
+}
+.dropContent a{
+    display: block;
+    padding: 10px 17px;
+    color: white;
+    font-size: 15px;
+    transition: 0.3s;
+
+}
+.dropButton:hover{
+    background-color: black;
+    color: white;
+}
+#dropDown:hover .dropContent{
+    display: block;
+}
+.dropContent a:hover{
+    background-color: rgba(0, 0, 0, 0.99);
+}
+a:link{
+    text-decoration: none;
+}

@@ -1,0 +1,125 @@
+div{
+    text-align: center;
+}
+#calendarBox table{
+    border-collapse: collapse;
+    margin: auto;
+}
+#calendarBox td, #calendarBox th{
+    width:14.25%;
+    border: 2px solid black;
+    padding:4px;
+    user-select: none;
+    min-width:70px;
+}
+#calendarBox td{
+    text-align: left;
+    /*min-width:70px;*/
+}
+/*td{
+    height: 50px;
+    vertical-align: top;
+    overflow: hidden;
+}*/
+#calendarBox th:hover{
+    cursor:default;
+}
+#calendarBox td:hover{
+    cursor:pointer;
+    background-color: #e8e8e8;
+}
+#calendarBox td.daySelected{
+    background: palegreen;
+}
+#calendarBox td.daySelected:hover{
+    background: #81d681;
+}
+#calendarBox td.dayAutoSelected{
+    background: #bfeaf8;
+}
+#calendarBox td.dayAutoSelected:hover{
+    background: lightblue;
+}
+button:hover{
+    cursor:pointer;
+}
+::-webkit-scrollbar {
+    width: 3px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.calendarCell{
+    height:50px;
+    vertical-align: top;
+    overflow-y: auto;
+}
+.calendarEvent{
+    background-color: burlywood;
+    font-size: small;
+    border:5px;
+    border-radius:5px;
+    padding: 3px 5px 3px 5px;
+    margin-bottom: 5px;
+}
+.typeAssignment{
+    background: #3ec884;
+}
+.typeChore{
+    background: gold;
+}
+.typeClass{
+    background: plum;
+}
+.typePractice{
+    background: burlywood;
+}
+.typeSocial{
+    background: lightpink;
+}
+.typeHealth{
+    background: #65a0f9;
+}
+.spanDiv{
+    display: inline-block;
+}
+/*#startEndDateInputs{
+    display:none;
+}*/
+/*.calendarEvent:hover{
+    cursor:pointer;
+    background-color: #e1a0ae;
+}*/
+#sidebar{
+    display: inline-block;
+    vertical-align: top;
+    width:36%;
+    margin:10px;
+}
+.menu{
+    background-color: lightgrey;
+    border-radius:20px;
+    margin:10px auto;
+    padding:10px;
+    display: inline-block;
+    vertical-align: top;
+    width:89%;
+}
+#createTaskBar{
+    min-width:220px;
+}
+#taskList{
+    min-width: 220px;
+}
+#calendarBox{
+    margin: 10px;
+    display: inline-block;
+    width: 52%;
+    min-width: 504px;
+}

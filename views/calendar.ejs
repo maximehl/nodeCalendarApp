@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calendar</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="calendar-scripting.js"></script>
+    <link rel="stylesheet" href="calendar-style.css"/>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div id="sidebar">
+    <div id="taskList" class="menu">
+        <b>To-Do List</b><br>
+        <i id="toDoDay"></i><br>
+        Time needed for uncompleted tasks: <span id="timeLeft">0</span> hours<br><Br>
+        <!--div id="dropDown">
+            <button class="dropButton">Filter By:</button>
+
+            <div class="dropContent">
+                <a href="#">Name</a>
+                <a href="#">Category</a>
+                <a href="#">Time</a>
+            </div>
+        </div-->
+
+
+        <table id="toDo" border="0px" cellpadding="10px">
+            <tr>
+                <th></th>
+                <th>Task:</th>
+                <th>Category:</th>
+                <th>Time:</th>
+            </tr>
+        </table>
+<br>
+        <b>Completed Tasks</b>
+<br><br>
+        <table id="completed" border="0px" cellpadding="10px">
+            <tr>
+                <th></th>
+                <th>Task:</th>
+                <th>Category:</th>
+                <th>Time:</th>
+            </tr>
+        </table>
+
+        <button id="updateButton" class="button" onclick="updateTables()">Update</button>
+    </div>
+    <br>
+    <div id="createTaskBar" class="menu">
+        <h3>Create a new task</h3>
+        <form onsubmit="return checkVals(this);"> <!--action='/posting' method='POST'-->
+            Event name: <input type="text" title="What is the name of your event?" name="eventText"><br>
+            Event length (hours): <input title="Number of hours?" type="number" step=".5" name="lengthEst" min="0" style="width:45px"><br>
+            Event type:
+            <select title="Type of event?" name="eventType">
+                <option value="Assignment">Assignment</option>
+                <option value="Chore">Chore</option>
+                <option value="Class">Class</option>
+                <option value="Practice">Practice</option>
+                <option value="Social">Social</option>
+                <option value="Health">Health</option>
+            </select><br>
+            Check any days the event repeats on:<br>
+            <div class="spanDiv"><input type="checkbox" name="weekdayRepeat" title="Sunday?" value="0"> <!--oninput="updateAutoSelects('.weekday0')"--> Sunday &nbsp;&nbsp;&nbsp;</div>
+            <div class="spanDiv"><input type="checkbox" name="weekdayRepeat" title="Monday?" value="1"> <!--oninput="updateAutoSelects('.weekday1')"--> Monday &nbsp;&nbsp;&nbsp;</div>
+            <div class="spanDiv"><input type="checkbox" name="weekdayRepeat" title="Tuesday?" value="2"> <!--oninput="updateAutoSelects('.weekday2')"--> Tuesday<br></div>
+            <div class="spanDiv"><input type="checkbox" name="weekdayRepeat" title="Wednesday?" value="3"> <!--oninput="updateAutoSelects('.weekday3')"--> Wednesday &nbsp;&nbsp;&nbsp;</div>
+            <div class="spanDiv"><input type="checkbox" name="weekdayRepeat" title="Thursday?" value="4"> <!--oninput="updateAutoSelects('.weekday4')"--> Thursday &nbsp;&nbsp;&nbsp;</div>
+            <div class="spanDiv"><input type="checkbox" name="weekdayRepeat" title="Friday?" value="5"> <!--oninput="updateAutoSelects('.weekday5')"--> Friday &nbsp;&nbsp;&nbsp;</div>
+            <div class="spanDiv"><input type="checkbox" name="weekdayRepeat" title="Saturday?" value="6"> <!--oninput="updateAutoSelects('.weekday6')"--> Saturday</div><br>
+            <!--span id="startEndDateInputs">
+                Starting date: <input type="date" name="startDate" title="Start date?"><br>
+                Ending date: <input type="date" name="endDate" title="Start date?"><br>
+            </span-->
+            <i id="dateSelectMsg"></i><br>
+            <button onclick="startSelectingDates()" type="button">Select one-time dates</button>&nbsp;&nbsp;<button onclick="clearAllDates()" type="button">Clear all dates</button><br>
+            <span id="selectedDates"></span><br>
+            <input type="hidden" name="username" value="<%= user._id %>">
+            <input type="submit">
+            <!--button type="button" onclick="checkVals()">Submit</button--><br>
+        </form>
+        <br>
+    </div>
+</div>
+<div id="calendarBox"></div>
+</body>
+</html>
