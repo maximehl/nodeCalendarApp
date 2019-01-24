@@ -36,7 +36,7 @@ require('./config/passport')(passport); // pass passport for configuration
 //require('./public/style.css');
 
 //start server
-var port     = process.env.PORT || 3000;
+var port     = process.env.PORT || 80;
 app.listen(port, () => {
-    console.log('meow')
+    console.log('starting up')
 })
